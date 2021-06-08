@@ -21,3 +21,6 @@ Layout/EndOfLine:
 
 Metrics/ModuleLength:
   Max: 200
+
+Lint/RedundantStringCoercion:
+  Enabled: false
