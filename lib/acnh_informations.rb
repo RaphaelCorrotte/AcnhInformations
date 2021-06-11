@@ -7,3 +7,5 @@ require_relative "acnh_informations/tools"
 # The main module
 module AcnhInformations
 end
+
+p AcnhInformations::Api.get_by_name(:fish, "bouv")

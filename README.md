@@ -10,7 +10,7 @@ TODO: Delete this and the text above, and describe your gem
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'acnh_informations-informations'
+gem 'acnh_informations'
 ```
 
 And then execute:
