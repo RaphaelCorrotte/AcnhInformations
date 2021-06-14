@@ -1,5 +1,8 @@
+
+[![forthebadge](https://forthebadge.com/images/badges/made-with-ruby.svg)](https://forthebadge.com)
+
 [![Les Laboratoires Ruby](https://invidget.switchblade.xyz/4P7XcmbDnt)](https://discord.gg/4P7XcmbDnt)
-# Acnh::Informations
+# Acnh Informations
 
 Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/acnh/informations`. To experiment with that code, run `bin/console` for an interactive prompt.
 

@@ -12,7 +12,7 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" scope="PROVIDED" name="ast (v2.4.2, ruby-3.0.0-p0) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="bundler (v2.2.13, ruby-3.0.0-p0) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="bundler (v2.2.20, ruby-3.0.0-p0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="domain_name (v0.5.20190701, ruby-3.0.0-p0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="ffi (v1.15.0, ruby-3.0.0-p0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="http-accept (v1.7.0, ruby-3.0.0-p0) [gem]" level="application" />
@@ -39,16 +39,21 @@
     <option name="myRootTask">
       <RakeTaskImpl id="rake">
         <subtasks>
-          <RakeTaskImpl description="Build acnh_informations-0.1.0.gem into the pkg directory" fullCommand="build" id="build" />
-          <RakeTaskImpl description="Remove any temporary products" fullCommand="clean" id="clean" />
-          <RakeTaskImpl description="Remove any generated files" fullCommand="clobber" id="clobber" />
-          <RakeTaskImpl description="Build and install acnh_informations-0.1.0.gem into system gems" fullCommand="install" id="install" />
-          <RakeTaskImpl id="install">
+          <RakeTaskImpl description="Build acnh_informations-0.1.1.gem into the pkg directory" fullCommand="build" id="build" />
+          <RakeTaskImpl id="build">
             <subtasks>
-              <RakeTaskImpl description="Build and install acnh_informations-0.1.0.gem into system gems without network access" fullCommand="install:local" id="local" />
+              <RakeTaskImpl description="Generate SHA512 checksum if acnh_informations-0.1.1.gem into the checksums directory" fullCommand="build:checksum" id="checksum" />
             </subtasks>
           </RakeTaskImpl>
-          <RakeTaskImpl description="Create tag v0.1.0 and build and push acnh_informations-0.1.0.gem to 'rubygems.org'" fullCommand="release[remote]" id="release[remote]" />
+          <RakeTaskImpl description="Remove any temporary products" fullCommand="clean" id="clean" />
+          <RakeTaskImpl description="Remove any generated files" fullCommand="clobber" id="clobber" />
+          <RakeTaskImpl description="Build and install acnh_informations-0.1.1.gem into system gems" fullCommand="install" id="install" />
+          <RakeTaskImpl id="install">
+            <subtasks>
+              <RakeTaskImpl description="Build and install acnh_informations-0.1.1.gem into system gems without network access" fullCommand="install:local" id="local" />
+            </subtasks>
+          </RakeTaskImpl>
+          <RakeTaskImpl description="Create tag v0.1.1 and build and push acnh_informations-0.1.1.gem to 'rubygems.org'" fullCommand="release[remote]" id="release[remote]" />
           <RakeTaskImpl description="Run RuboCop" fullCommand="rubocop" id="rubocop" />
           <RakeTaskImpl id="rubocop">
             <subtasks>
