@@ -22,11 +22,19 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install acnh-informations
+    $ gem install acnh_informations
 
 ## Usage
+### Examples: 
 
-TODO: Write usage instructions here
+Get using `scrape`:
+```ruby
+    AcnhInformations::Api.scrape(:fish, 5)
+```
+Get using `get_by_name`:
+```ruby
+    AcnhInformations::Api.get_by_name(:fish, "bouvière")
+```
 
 ## Development
 
@@ -36,7 +44,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/Senchuu/acnh-informations.
+Bug reports and pull requests are welcome on GitHub at https://github.com/Senchuu/AcnhInformations.
 
 ## License
 
