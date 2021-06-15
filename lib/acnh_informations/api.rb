@@ -18,7 +18,7 @@ module AcnhInformations
     # @param id [Symbol, StringIO, NilClass] The id to get
     # @return [Boolean] True or False, if the wanted research exists
     def self.valid?(category, id = nil)
-      RestClient.get("#{BASE_URL}/v1/#{category.to_s}/#{id ? id.to_s : ""}")
+      RestClient.get("#{BASE_URL}/v1/#{category.to_s}/#{id ? id.to_s.ascii_only? ? id.to_s : "" : ""}")
       true
     rescue RestClient::NotFound
       false
