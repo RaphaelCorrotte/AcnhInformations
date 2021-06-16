@@ -14,11 +14,13 @@ module AcnhInformations
     ##
     # Verify if the object exists
     #
-    # @param [Symbol, StringIO] category The category to find the object
-    # @param id [Symbol, StringIO, NilClass] The id to get
+    # @param [Symbol, String] category The category to find the object
+    # @param id [Symbol, String, NilClass] The id to get
     # @return [Boolean] True or False, if the wanted research exists
     def self.valid?(category, id = nil)
-      RestClient.get("#{BASE_URL}/v1/#{category.to_s}/#{id ? id.to_s.ascii_only? ? id.to_s : "" : ""}")
+      return false unless id.to_s.ascii_only?
+
+      RestClient.get("#{BASE_URL}/v1/#{category.to_s}/#{id ? id.to_s : ""}")
       true
     rescue RestClient::NotFound
       false
@@ -27,12 +29,12 @@ module AcnhInformations
     ##
     # Scrape informations from API
     #
-    # @param [Symbol, StringIO] category The category to find the object
-    # @param id [Symbol, StringIO, NilClass] The id to get
+    # @param [Symbol, String] category The category to find the object
+    # @param id [Symbol, String, NilClass] The id to get
     # @return [Object] The result as a Hash
     # @see Api#valid?
     def self.scrape(category, id = nil)
-      return false unless valid?(category, id)
+      return false unless valid?(category.to_s, id.to_s)
 
       JSON.parse(RestClient.get("#{BASE_URL}/v1/#{category.to_s}/#{id ? id.to_s : ""}"), :symbolize_names => true)
     end
