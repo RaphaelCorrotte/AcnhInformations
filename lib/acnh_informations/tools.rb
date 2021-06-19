@@ -16,7 +16,7 @@ module AcnhInformations
 
       scrape(category.to_s).each do |element|
         element[1][:name].each_value do |language_name|
-          result = element[1] if language_name.match(/#{name.to_s}/)
+          result = element[1] if language_name.downcase.match(/#{name.to_s.downcase}/)
           break if result
         end
       end
